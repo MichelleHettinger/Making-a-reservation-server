@@ -30,6 +30,18 @@ app.get('/reserve', function(req, res){
 	res.sendFile(path.join(__dirname + '/app/public/reserve.html'));
 })
 
+
+app.post('/api/tables', function(req, res){
+	// res.sendFile(path.join(__dirname + '/app/public/reserve.html'));
+})
+app.get('/api/waitlist', function(req, res){
+	// res.sendFile(path.join(__dirname + '/app/public/reserve.html'));
+})
+
+
+
+
+
 // Starts the server to begin listening
 // =============================================================
 app.listen(PORT, function(){
