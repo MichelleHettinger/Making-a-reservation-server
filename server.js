@@ -4,6 +4,8 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
 var morgan = require('morgan');
+var htmlRoutes = require('/app/routing/html-routes.js')(app);
+var apiRoutes = require('/app/routing/api-routes.js')(app);
 
 // Sets up the Express App
 // =============================================================
@@ -15,31 +17,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.text());
 app.use(bodyParser.json({type:'application/vnd.api+json'}));
-
-
-// Basic route that sends the user first to the AJAX Page
-app.get('/', function(req, res){
-	res.sendFile(path.join(__dirname + '/app/public/home.html'));
-})
-
-app.get('/tables', function(req, res){
-	res.sendFile(path.join(__dirname + '/app/public/tables.html'));
-})
-
-app.get('/reserve', function(req, res){
-	res.sendFile(path.join(__dirname + '/app/public/reserve.html'));
-})
-
-
-app.post('/api/tables', function(req, res){
-	// res.sendFile(path.join(__dirname + '/app/public/reserve.html'));
-})
-app.get('/api/waitlist', function(req, res){
-	// res.sendFile(path.join(__dirname + '/app/public/reserve.html'));
-})
-
-
-
 
 
 // Starts the server to begin listening
