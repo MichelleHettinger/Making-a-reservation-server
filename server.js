@@ -3,6 +3,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
+var morgan = require('morgan');
 
 // Sets up the Express App
 // =============================================================
@@ -18,7 +19,7 @@ app.use(bodyParser.json({type:'application/vnd.api+json'}));
 
 // Basic route that sends the user first to the AJAX Page
 app.get('/', function(req, res){
-	res.sendFile(path.join(__dirname + '/index.html'));
+	res.sendFile(path.join(__dirname + '/app/public/home.html'));
 })
 
 
