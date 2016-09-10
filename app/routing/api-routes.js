@@ -5,11 +5,11 @@ var waitings = require("../data/waitinglist-data.js");
 module.exports = function (app){
 	app.post('/api/tables', function(req, res){
 		// console.log(req.body);
-		
+
 		tables.push(req.body);
 		console.log(tables);
 
-
+		res.json(tables);
 	});
 
 	app.get('/api/waitlist', function(req, res){
